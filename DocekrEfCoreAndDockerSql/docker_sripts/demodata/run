@@ -1,0 +1,10 @@
+#!/bin/sh
+#datademo
+
+docker run \
+    -d \
+    --net=netbridge \
+    --name=datademo \
+    -e "ConnectionStrings:datacontext=Server=demosql;Database=datademo;User Id=sa;Password=Demo2020;MultipleActiveResultSets=true;" \
+    demo/datademo
+

@@ -1,0 +1,14 @@
+﻿#!/bin/sh
+# demosql
+
+docker run \
+    -d \
+    --restart always \
+    --name=demosql \
+    --net=netbridge \
+    -p 1433:1433 \
+    -v ~/Docker/sqldata:/var/opt/mssql \
+    -e "ACCEPT_EULA=Y" \
+    -e "MSSQL_SA_PASSWORD=Demo2020" \
+    mcr.microsoft.com/mssql/server
+ 

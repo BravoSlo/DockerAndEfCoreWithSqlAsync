@@ -1,0 +1,10 @@
+#!/bin/sh
+
+docker kill datademo
+docker rm datademo
+docker rmi demo/datademo
+
+rm DocekrEfCoreAndDockerSqlPub.tar.gz
+cp DocekrEfCoreAndDockerSqlPubRegular.tar.gz DocekrEfCoreAndDockerSqlPub.tar.gz
+
+docker build -t demo/datademo .

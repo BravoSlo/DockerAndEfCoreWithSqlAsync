@@ -1,0 +1,6 @@
+{
+	"ConnectionStrings": {
+		"DataContext": "server=localhost;Database=datedemo;Integrated Security=true;User Id=sa;Password=;MultipleActiveResultsets=true;",
+	}
+
+}

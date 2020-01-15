@@ -1,0 +1,31 @@
+﻿# tested this on ubuntu desktop 19.10 and ubuntu server 18.04.03
+# with docker-ce version 19.03.03 build  a872fc2f86
+
+# setup network
+docker network create -d bridge netbridge
+
+# from home folder create folders
+mkdir Docker
+mkdir Docker/sqldata
+chmod ugo+rwx Docker/sqldata
+
+# run sql server
+./runsql
+
+# build and run demo regular
+./buildRegular
+./run
+
+# monitor with process monitor (htop)
+# using docker ps wait for container to exit
+# on sql check database "datademo.dbo.Users"
+
+# build and run demo async
+./buildAsync
+./run
+
+# monitor with process monitor (htop)
+# using docker ps wait for container to exit (never it just sits there doing nothing)
+# on sql check database "datademo.dbo.Users" (these never complete fail delete or fail insert)
+
+
